@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hostels</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="leaflet/leaflet.css">
+	<script src = "leaflet/leaflet.js"></script>
+	<script src = "data/2500-3500.geojson"></script>
+	<script src = "data/3500-5500.geojson"></script>
+	<script src = "data/university_hostels.geojson"></script>
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+	<h1>My Map</h1>
+</div>
+</div>
+
+<div id ="legend">
+	<svg height="100" width="200">
+	  <rec x="10" y="10" width="30" height="50" style="stroke-width:4"/>
+	</svg>
+</div>
+
+<div id ="map" style="height: 300px; width: 150;"></div>
+<script>
+	// initialize the map on the "map" div with a given center and zoom
+var map = L.map('map', {
+    center: [-0.3933472,36.9613424],
+    zoom: 17
+});
+
+L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+//to load map tiles from other providers
+//var layer = new L.TileLayer('url of the required map');
+
+
+//.................................................................................................................
+
+//L.marker([-0.39221945,36.96386760]).addTo(map);
+//marker.bindPopup(popupContent).openPopup();
+var popup = L.popup()
+    .setLatLng([-0.39253184,36.96605812])
+    .setContent("<p>This hostels ranges<br> from 2500-3500</p>")
+    .openOn(map);
+
+//var firstshp = new L.geoJson(first).addTo(map);
+
+
+//.................................................................................................................
+
+//L.marker([-0.3945201,36.9633107]).addTo(map);
+//var secondshp = new L.geoJson(second).addTo(map);
+
+
+
+
+
+//.................................................................................................................
+
+//L.marker([-0.3923530,36.9595412]).addTo(map);
+//var universityshp = new L.geoJson(university).addTo(map);
+//.................................................................................................................
+
+var mar = new L.marker([-0.3945201,36.9633107]);
+mar.addTo(map);
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div id ="legend">
+	<svg height="100" width="200">
+	  <rec x="10" y="10" width="30" height="50" style="stroke-width:4"/>
+	</svg>
+</div>
